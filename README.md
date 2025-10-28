@@ -1,9 +1,4 @@
-# dnsleaktest-image
-
-Build image for deployment based on the source. Intended for deployment to my Unraid box.
-
-
-# dnsleaktest-image
+# Description
 
 A minimal Alpine-based Docker image that runs a Python DNS leak test script forked from https://github.com/macvk/dnsleaktest. Built and deployed using GitHub Actions and hosted on GitHub Container Registry (GHCR).
 
