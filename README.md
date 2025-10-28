@@ -6,4 +6,4 @@ A minimal Alpine-based Docker image that runs a Python DNS leak test script fork
 ## Usage
 
 ```bash
-docker run --rm ghcr.io/dskmnky/python-dnsleaktest:latest
+docker run --rm ghcr.io/dskmnky/dnsleaktest-image:latest
