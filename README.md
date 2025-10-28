@@ -1,12 +1,3 @@
-dnsleaktest-image/
-├── .github/
-│   └── workflows/
-│       └── docker-build.yml
-├── Dockerfile
-├── LICENSE
-└── README.md
-
-
 # dnsleaktest-image
 
 Build image for deployment based on the source. Intended for deployment to my Unraid box.
