@@ -6,13 +6,27 @@ on:
   repository_dispatch:
     types: [dnsleaktest-updated]
   schedule:
-    - cron: '0 3 * * 1'  # Weekly rebuild (Monday 3 AM UTC)
+    - cron: '0 1 * * 6'  # Weekly rebuild (Sat 1 AM UTC)
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check if second Saturday
+      id: check
+      run: |
+        day=$(date +%d)
+        if [ "$day" -ge 8 ] && [ "$day" -le 14 ]; then
+          echo "run=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "run=false" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Run only if second Saturday
+      if: steps.check.outputs.run == 'true'
+      run: echo "Doing the actual work here"
+        
     - name: Checkout code
       uses: actions/checkout@v3
 
